@@ -1,6 +1,8 @@
 package section6;
 
 import java.util.Arrays;
+import java.util.IdentityHashMap;
+import java.util.Map;
 
 public class MainTwoSum {
 
@@ -14,6 +16,7 @@ public class MainTwoSum {
         int target = 9;
 
         System.out.println(Arrays.toString(twoSum(nums, target)));
+        System.out.println(Arrays.toString(twoSumMap(nums, target)));
 
     }
 
@@ -44,5 +47,18 @@ public class MainTwoSum {
         }
 
         return new int[]{i, j};
+    }
+
+    public static int[] twoSumMap(int[] nums, int target) {
+
+        Map<Integer, Integer> calculation = new IdentityHashMap<>();
+
+        for (int i=0; i<nums.length; i++){
+            if(calculation.containsKey(target-nums[i])){
+                return new int[]{calculation.get(target-nums[i]), i};
+            }
+            calculation.put(nums[i],i);
+        }
+        return new int[]{};
     }
 }
