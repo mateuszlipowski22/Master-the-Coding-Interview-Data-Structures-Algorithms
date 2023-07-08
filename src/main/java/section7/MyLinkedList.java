@@ -9,6 +9,18 @@ public class MyLinkedList<T> {
         this.length = 1;
     }
 
+    public Node<T> getHead() {
+        return head;
+    }
+
+    public Node<T> getTail() {
+        return tail;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
     public void append(T value){
         Node<T> newNode = new Node<>(value);
         this.tail.setNext(newNode);
