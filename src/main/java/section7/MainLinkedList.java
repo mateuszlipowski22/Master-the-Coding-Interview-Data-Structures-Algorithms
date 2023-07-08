@@ -9,6 +9,11 @@ public class MainLinkedList {
         myLinkedList.append(10);
         System.out.println(myLinkedList);
         myLinkedList.append(15);
+        myLinkedList.append(20);
+        myLinkedList.append(25);
+        myLinkedList.append(30);
+        System.out.println(myLinkedList);
+        myLinkedList.reverse();
         System.out.println(myLinkedList);
         myLinkedList.prepend(10);
         System.out.println(myLinkedList);

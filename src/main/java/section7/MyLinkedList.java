@@ -1,5 +1,7 @@
 package section7;
 
+import java.util.Objects;
+
 public class MyLinkedList<T> {
 
     public MyLinkedList(T value) {
@@ -8,6 +10,11 @@ public class MyLinkedList<T> {
         this.tail=newNode;
         this.length = 1;
     }
+
+    private Node<T> head;
+    private Node<T> tail;
+    private int length;
+
 
     public Node<T> getHead() {
         return head;
@@ -74,9 +81,27 @@ public class MyLinkedList<T> {
         length++;
     }
 
-    private Node<T> head;
-    private Node<T> tail;
-    private int length;
+    public void reverse(){
+
+        if(this.length==1){
+            return;
+        }
+
+        Node<T> first = this.head;
+        this.tail=this.head;
+        Node<T> second = first.getNext();
+        Node<T> temp;
+        while(Objects.nonNull(second)){
+            temp = second.getNext();
+            second.setNext(first);
+            first = second;
+            second = temp;
+        }
+        this.head.setNext(null);
+        this.head = first;
+
+    }
+
 
     @Override
     public String toString() {
