@@ -54,6 +54,10 @@ public class MyQueue<T> {
         return firstNode.getValue();
     }
 
+    public boolean isEmpty(){
+        return this.length>0;
+    }
+
     @Override
     public String toString() {
         String output =
