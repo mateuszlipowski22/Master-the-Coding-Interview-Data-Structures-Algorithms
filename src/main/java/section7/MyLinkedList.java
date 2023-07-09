@@ -105,10 +105,6 @@ public class MyLinkedList<T> {
 
     @Override
     public String toString() {
-        return "MyLinkedList{" +
-                "head=" + head +
-                ", tail=" + tail +
-                ", lentgth=" + length +
-                '}';
+        return "MyLinkedList [" + head + " ]";
     }
 }

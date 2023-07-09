@@ -1,5 +1,7 @@
 package section7;
 
+import java.util.Objects;
+
 public class Node<T>{
 
     public Node(T value) {
@@ -27,9 +29,7 @@ public class Node<T>{
 
     @Override
     public String toString() {
-        return "Node{" +
-                "value=" + value +
-                ", next=" + this.getNext() +
-                '}';
+        return " " + value
+                 + ((Objects.nonNull(this.getNext())) ? this.getNext() : "");
     }
 }
