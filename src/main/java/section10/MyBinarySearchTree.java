@@ -37,6 +37,32 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
         }
     }
 
+    public boolean lookup(T value) {
+        if (this.root == null) {
+            return false;
+        }
+
+        BinaryTreeNode<T> currentNode = root;
+
+        while (true) {
+            if (currentNode.compareTo(value) > 0) {
+                if (Objects.isNull(currentNode.getLeft())) {
+                    return false;
+                } else {
+                    currentNode = currentNode.getLeft();
+                }
+            } else if (currentNode.compareTo(value) < 0) {
+                if (Objects.isNull(currentNode.getRight())) {
+                    return false;
+                } else {
+                    currentNode = currentNode.getRight();
+                }
+            } else{
+                return true;
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "MyBinarySearchTree{" +

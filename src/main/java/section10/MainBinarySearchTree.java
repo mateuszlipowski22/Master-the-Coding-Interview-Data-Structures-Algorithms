@@ -13,6 +13,9 @@ public class MainBinarySearchTree {
         myBinarySearchTree.insert(1);
 
         System.out.println("myBinarySearchTree = " + myBinarySearchTree);
+
+        System.out.println("myBinarySearchTree.lookup(15) = " + myBinarySearchTree.lookup(15));
+        System.out.println("myBinarySearchTree.lookup(16) = " + myBinarySearchTree.lookup(16));
     }
 
 }
