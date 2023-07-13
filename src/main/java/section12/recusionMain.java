@@ -4,8 +4,8 @@ public class recusionMain {
 
     public static void main(String[] args) {
 
-        System.out.println("findFactorialRecursive(6) = " + findFactorialRecursive(6));
-        System.out.println("findFactorialIterative(6) = " + findFactorialIterative(6));
+        System.out.println("findFactorialRecursive(6) = " + findFactorialRecursive(1));
+        System.out.println("findFactorialIterative(6) = " + findFactorialIterative(1));
 
     }
 
