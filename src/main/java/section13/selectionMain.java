@@ -35,8 +35,6 @@ public class selectionMain {
                 input[index]=input[i];
                 input[i]=min;
             }
-
-            System.out.println("Interation "+ i +" "+ Arrays.toString(input));
         }
         return input;
     }
