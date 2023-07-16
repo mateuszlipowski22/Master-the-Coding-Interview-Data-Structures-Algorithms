@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class mergeMain {
     public static void main(String[] args) {
 
-        int[] input = {13,2,4,2,4,6,8,0,12,2,5,6};
+        int[] input = {13, 2, 4, 2, 4, 6, 8, 0, 12, 2, 5, 6};
 
         System.out.println(Arrays.toString(input));
 
@@ -93,8 +93,7 @@ public class mergeMain {
         while (i < left && j < right) {
             if (l[i] <= r[j]) {
                 a[k++] = l[i++];
-            }
-            else {
+            } else {
                 a[k++] = r[j++];
             }
         }
