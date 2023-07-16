@@ -103,6 +103,51 @@ public class MyBinarySearchTree<T extends Comparable<T>> {
         return breadthFirstSearchRecursive(queue, output);
     }
 
+    public List<T> DFSInOrder(){
+        return traverseInOrder(this.getRoot(), new ArrayList<>());
+    }
+
+    public List<T> DFSPreOrder(){
+        return traversePreOrder(this.getRoot(), new ArrayList<>());
+    }
+
+    public List<T> DFSPostOrder(){
+        return traversePostOrder(this.getRoot(), new ArrayList<>());
+    }
+
+    private List<T> traverseInOrder(BinaryTreeNode<T> node, List<T> output){
+        if(Objects.nonNull(node.getLeft())){
+            traverseInOrder(node.getLeft(), output);
+        }
+        output.add(node.getValue());
+        if(Objects.nonNull(node.getRight())){
+            traverseInOrder(node.getRight(), output);
+        }
+        return output;
+    }
+
+    private List<T> traversePreOrder(BinaryTreeNode<T> node, List<T> output){
+        output.add(node.getValue());
+        if(Objects.nonNull(node.getLeft())){
+            traversePreOrder(node.getLeft(), output);
+        }
+        if(Objects.nonNull(node.getRight())){
+            traversePreOrder(node.getRight(), output);
+        }
+        return output;
+    }
+
+    private List<T> traversePostOrder(BinaryTreeNode<T> node, List<T> output){
+        if(Objects.nonNull(node.getLeft())){
+            traversePostOrder(node.getLeft(), output);
+        }
+        if(Objects.nonNull(node.getRight())){
+            traversePostOrder(node.getRight(), output);
+        }
+        output.add(node.getValue());
+        return output;
+    }
+
     @Override
     public String toString() {
         return "MyBinarySearchTree{" +
