@@ -40,7 +40,28 @@ public class mergeMain {
         merge(a, l, r, mid, n - mid);
     }
 
-//    public static void mergeSort(Integer[] input){
+
+    public static void merge(
+            int[] a, int[] l, int[] r, int left, int right) {
+
+        int i = 0, j = 0, k = 0;
+        while (i < left && j < right) {
+            if (l[i] <= r[j]) {
+                a[k++] = l[i++];
+            } else {
+                a[k++] = r[j++];
+            }
+        }
+        while (i < left) {
+            a[k++] = l[i++];
+        }
+        while (j < right) {
+            a[k++] = r[j++];
+        }
+        System.out.println(Arrays.toString(a));
+    }
+
+//        public static void mergeSort(Integer[] input){
 //
 //        if(input.length<2){
 //            return;
@@ -85,25 +106,5 @@ public class mergeMain {
 //        System.out.println(Arrays.toString(result));
 //        return result;
 //    };
-
-    public static void merge(
-            int[] a, int[] l, int[] r, int left, int right) {
-
-        int i = 0, j = 0, k = 0;
-        while (i < left && j < right) {
-            if (l[i] <= r[j]) {
-                a[k++] = l[i++];
-            } else {
-                a[k++] = r[j++];
-            }
-        }
-        while (i < left) {
-            a[k++] = l[i++];
-        }
-        while (j < right) {
-            a[k++] = r[j++];
-        }
-        System.out.println(Arrays.toString(a));
-    }
 
 }
